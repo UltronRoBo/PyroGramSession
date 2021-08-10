@@ -6,8 +6,8 @@ logging.getLogger().setLevel(logging.ERROR)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from pyromod import listen
-from pyrogram import Client as Ultron
 from heroku3 import from_key
+from pyrogram import Client as Ultron
 
 TOKEN = os.environ.get("TOKEN", None)
 APP_NAME = os.environ.get("NAME", None)
