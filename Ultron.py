@@ -15,7 +15,7 @@ HEROKU_API = os.environ.get("API", None)
 API_ID = int(os.environ.get("API_ID", 0))
 API_HASH = os.environ.get("API_HASH", None)
 
-HU_APP = from_key(HEROKU_API).apps()[APP_NAME]
+HEROKU_APP = from_key(HEROKU_API).apps()[APP_NAME]
 
 def main():
     plugins = dict(root="session")
