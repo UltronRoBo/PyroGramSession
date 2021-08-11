@@ -55,7 +55,7 @@ OTP = """**__Nᴏᴛᴇᴅ!!__**\n\n𝑨𝒏 `𝙊𝙏𝙋` 𝒘𝒂𝒔 𝒔�
 TWO_STEP_VERIFICATION = """**__Nᴏᴛᴇᴅ!!__**\n\n𝒀𝒐𝒖❜𝒗𝒆 𝒆𝒏𝒂𝒃𝒍𝒆𝒅 𝒕𝒉𝒆 `𝙏𝙬𝙤-𝙎𝙩𝙚𝙥 𝙑𝙚𝙧𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣` 𝒇𝒐𝒓 𝒚𝒐𝒖𝒓 𝒂𝒄𝒄𝒐𝒖𝒏𝒕.\n𝑷𝒍𝒆𝒂𝒔𝒆 𝒆𝒏𝒕𝒆𝒓 𝒚𝒐𝒖𝒓 `𝙏𝙬𝙤-𝙎𝙩𝙚𝙥 𝙋𝙖𝙨𝙨𝙬𝙤𝙧𝙙`\n\n𝒀𝒐𝒖 𝒄𝒂𝒏 𝒑𝒓𝒆𝒔𝒔 /cancel 𝒊𝒇 𝒚𝒐𝒖 𝒅𝒐𝒏❜𝒕 𝒘𝒂𝒏𝒏𝒂 𝒄𝒐𝒏𝒕𝒊𝒏𝒖𝒆 𝒘𝒊𝒕𝒉 𝒕𝒉𝒆 𝒑𝒓𝒐𝒄𝒆𝒔𝒔."""
 
 
-@Ultron.on_message(filters.private & filters.command("start", "start@UltronPyro_Bot"))
+@Ultron.on_message(filters.private & filters.command("start"))
 async def string(_, msg: Message):
     if msg.chat.id in Var.BANNED:
         await Ultron.send_message(
@@ -266,13 +266,13 @@ async def string(_, msg: Message):
         await Ultron.send_message(chat.id, f"****𝙀𝙍𝙍𝙊𝙍 :** `{str(e)}`")
         return
     
-@Ultron.on_message(filters.private & filters.command("restart", "restart@UltronPyro_Bot"))
+@Ultron.on_message(filters.private & filters.command("restart"))
 async def restart(_, msg: Message):
     if msg.from_user.id == 1732236209:
         await msg.reply("𝑹𝒆𝒔𝒕𝒂𝒓𝒕𝒆𝒅 𝒕𝒉𝒆 𝑩𝒐𝒕 𝑺𝒖𝒄𝒄𝒆𝒔𝒔𝒇𝒖𝒍𝒍𝒚❗❗")
         return Var.HEROKU_APP.restart()
     
-@Ultron.on_message(filters.private & filters.command("help", "help@UltronPyro_Bot"))
+@Ultron.on_message(filters.private & filters.command("help"))
 async def help(_, msg: Message):
     help_text = f"""
 **𝑯𝒊!! {msg.from_user.mention}**\n𝑰❜𝒎 **PʏʀᴏGʀᴀᴍ Sᴛʀɪɴɢ Sᴇssɪᴏɴ Gᴇɴᴇʀᴀᴛᴏʀ**\n𝑰 𝒄𝒂𝒏 𝒉𝒆𝒍𝒑 𝒚𝒐𝒖 𝒕𝒐 𝒈𝒆𝒏𝒆𝒓𝒂𝒕𝒆 𝒂 𝑷𝒚𝒓𝒐𝑮𝒓𝒂𝒎 𝑺𝒕𝒓𝒊𝒏𝒈 𝑺𝒆𝒔𝒔𝒊𝒐𝒏 𝒇𝒐𝒓 𝒚𝒐𝒖𝒓 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 𝑨𝒄𝒄𝒐𝒖𝒏𝒕 𝒊𝒏 𝒂𝒏 𝑬𝒂𝒔𝒚 𝑾𝒂𝒚...
@@ -310,7 +310,7 @@ async def help(_, msg: Message):
     await msg.reply(help_text, reply_markup=reply_markup)
     
 async def is_cancel(msg: Message, text: str):
-    if text.startswith("/cancel", "/cancel@UltronPyro_Bot"):
+    if text.startswith("/cancel"):
         await msg.reply("𝑷𝒓𝒐𝒄𝒆𝒔𝒔 𝑪𝒂𝒏𝒄𝒆𝒍𝒍𝒆𝒅 𝑺𝒖𝒄𝒄𝒆𝒔𝒔𝒇𝒖𝒍𝒍𝒚")
         return True
     return False
