@@ -175,7 +175,7 @@ async def string(_, msg: Message):
         )
         if not number.text:
             continue
-        if await is_cancel(msg, number.txt):
+        if await is_cancel(msg, number.text):
             return
         phone = number.text
         # Confirming if provided Number is Correct
