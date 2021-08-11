@@ -24,6 +24,10 @@ _**Powered by UltronRoBo**_
    - Your Heroku App Name, that you will enter at the Top of the Deploy Page
 - `HEROKU_API`
    - Your Heroku Account's API KEY. Get it from <a href="https://dashboard.heroku.com/account/" alt="HEROKU_API"> <img src="https://img.shields.io/badge/HEROKU__API-f6bc16?logo=heroku" /></a>  
+- `SUPPORT`
+   - Your Bot's Support Channel, that you want the users to join in order to use your Session Generator. Make sure that you don't put @ in it
+- `SUPPORT_GROUP` 
+   -Your Bot's Support Group, where the users can join and bother you about bugs/errors in the Session Generator. Make sure that you don't put @ in it   
 
 ---
 
