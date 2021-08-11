@@ -27,7 +27,7 @@ _**Powered by UltronRoBo**_
 - `SUPPORT`
    - Your Bot's Support Channel, that you want the users to join in order to use your Session Generator. Make sure that you don't put @ in it
 - `SUPPORT_GROUP` 
-   -Your Bot's Support Group, where the users can join and bother you about bugs/errors in the Session Generator. Make sure that you don't put @ in it   
+   - Your Bot's Support Group, where the users can join and bother you about bugs/errors in the Session Generator. Make sure that you don't put @ in it   
 
 ---
 
