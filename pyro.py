@@ -240,6 +240,7 @@ async def string(_, msg: Message):
         new_code = two_step_code.text
         try:
             await session.check_password(new_code)
+            return
     except Exception as e:
         await Ultron.send_message(chat.id, f"**𝙀𝙍𝙍𝙊𝙍 :** `{str(e)}`")
         return
