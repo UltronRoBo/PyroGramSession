@@ -1,0 +1,63 @@
+{
+    "name": "PʏʀᴏGʀᴀᴍ Sᴇssɪᴏɴ",
+    "description": "A sᴜᴘᴇʀʙ ʙᴏᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ PʏʀᴏGʀᴀᴍ Sᴇssɪᴏɴ ғᴏʀ ʏᴏᴜʀ Tᴇʟᴇɢʀᴀᴍ Aᴄᴄᴏᴜɴᴛ ɪɴ ᴀɴ ᴇᴀsʏ ᴡᴀʏ. 𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 𝑼𝒍𝒕𝒓𝒐𝒏𝑹𝒐𝑩𝒐",
+    "keywords": [
+        "string"
+        "pyrogram"
+        "telegram"
+        "ultron"
+        "bot"
+        "python"
+        "session"
+    ],
+    "repository": "https://github.com/UltronRoBo/PyroGramSession/",
+    "website": "https://github.com/UltronRoBo/PyroGramSession/",
+    "success_url": "https://github.com/UltronRoBo/PyroGramSession/",
+    "env": {
+        "WEBHOOK": {
+            "description": "Setting this to ANYTHING, will enable webhooks, when in env mode",
+            "value": "ANYTHING"
+        },
+        "TOKEN": {
+            "description": "Your Bot Token, as a String. Get it from @BotFather on Telegram",
+            "value": ""
+            "required": true
+        },
+        "API_ID": {
+            "description": "Your Telegram Account's API ID. Get it from https://my.telegram.org/",
+            "value": ""
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Your Telegram Account's API HASH. Get it from https://my.telegram.org/",
+            "value": ""
+            "required": true
+        },
+        "APP_NAME": {
+            "description": "Your Heroku App Name, that you just entered at the Top of the page",
+            "value": ""
+            "required": true
+        },
+        "HEROKU_API": {
+            "description": "Your Heroku Account's API KEY. Get it from https://dashboard.heroku.com/account/",
+            "value": ""
+            "required": true
+        }
+    },
+    "addons": [
+    ],
+    "buildpacks": [
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+        },
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
