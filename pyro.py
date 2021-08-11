@@ -241,29 +241,29 @@ async def string(_, msg: Message):
         try:
             await session.check_password(new_code)
             return
-    except Exception as e:
-        await Ultron.send_message(chat.id, f"**𝙀𝙍𝙍𝙊𝙍 :** `{str(e)}`")
-        return
-    try:
-        pyro_session =  await session.export_session_string()
-        await session.send_message("me", f"""**👇 𝑯𝒆𝒓𝒆 𝒊𝒔 𝒚𝒐𝒖𝒓 𝑷𝒚𝒓𝒐𝑮𝒓𝒂𝒎 𝑺𝒕𝒓𝒊𝒏𝒈 𝑺𝒆𝒔𝒔𝒊𝒐𝒏 👇**\n𝑮𝒆𝒏𝒆𝒓𝒂𝒕𝒆𝒅 𝒖𝒔𝒊𝒏𝒈 [{bot}](https://t.me/{bot_name})\n\n```{pyro_session}```\n\n**👆 𝑻𝒂𝒑 𝒕𝒐 𝑪𝒐𝒑𝒚 👆**\n#PyroGram #Session #Ultron""", disable_web_page_preview=True)
-        await session.disconnect()
-        text = "𝒀𝒐𝒖𝒓 𝑷𝒚𝒓𝒐𝑮𝒓𝒂𝒎 𝑺𝒆𝒔𝒔𝒊𝒐𝒏 𝒘𝒂𝒔 𝒈𝒆𝒏𝒆𝒓𝒂𝒕𝒆𝒅 𝑺𝒖𝒄𝒄𝒆𝒔𝒔𝒇𝒖𝒍𝒍𝒚.✅\n𝑻𝒂𝒑 𝑩𝒆𝒍𝒐𝒘 𝒕𝒐 𝒈𝒆𝒕 𝒊𝒕.👇"
-        reply_markup = InlineKeyboardMarkup
-        (
-            [
+        except Exception as e:
+            await Ultron.send_message(chat.id, f"**𝙀𝙍𝙍𝙊𝙍 :** `{str(e)}`")
+            return
+        try:
+            pyro_session =  await session.export_session_string()
+            await session.send_message("me", f"""**👇 𝑯𝒆𝒓𝒆 𝒊𝒔 𝒚𝒐𝒖𝒓 𝑷𝒚𝒓𝒐𝑮𝒓𝒂𝒎 𝑺𝒕𝒓𝒊𝒏𝒈 𝑺𝒆𝒔𝒔𝒊𝒐𝒏 👇**\n𝑮𝒆𝒏𝒆𝒓𝒂𝒕𝒆𝒅 𝒖𝒔𝒊𝒏𝒈 [{bot}](https://t.me/{bot_name})\n\n```{pyro_session}```\n\n**👆 𝑻𝒂𝒑 𝒕𝒐 𝑪𝒐𝒑𝒚 👆**\n#PyroGram #Session #Ultron""", disable_web_page_preview=True)
+            await session.disconnect()
+            text = "𝒀𝒐𝒖𝒓 𝑷𝒚𝒓𝒐𝑮𝒓𝒂𝒎 𝑺𝒆𝒔𝒔𝒊𝒐𝒏 𝒘𝒂𝒔 𝒈𝒆𝒏𝒆𝒓𝒂𝒕𝒆𝒅 𝑺𝒖𝒄𝒄𝒆𝒔𝒔𝒇𝒖𝒍𝒍𝒚.✅\n𝑻𝒂𝒑 𝑩𝒆𝒍𝒐𝒘 𝒕𝒐 𝒈𝒆𝒕 𝒊𝒕.👇"
+            reply_markup = InlineKeyboardMarkup
+            (
                 [
-                    InlineKeyboardButton
-                    (
-                        "😼 Gᴇᴛ Sᴛʀɪɴɢ Sᴇssɪᴏɴ 😼", url=f"tg://openmessage?user_id={chat.id}"
-                    )
+                    [
+                        InlineKeyboardButton
+                        (
+                            "😼 Gᴇᴛ Sᴛʀɪɴɢ Sᴇssɪᴏɴ 😼", url=f"tg://openmessage?user_id={chat.id}"
+                        )
+                    ]
                 ]
-            ]
-        )
-        await Ultron.send_message(chat.id, text, reply_markup=reply_markup)
-    except Exception as e:
-        await Ultron.send_message(chat.id, f"****𝙀𝙍𝙍𝙊𝙍 :** `{str(e)}`")
-        return
+            )
+            await Ultron.send_message(chat.id, text, reply_markup=reply_markup)
+            except Exception as e:
+                await Ultron.send_message(chat.id, f"****𝙀𝙍𝙍𝙊𝙍 :** `{str(e)}`")
+                return
     
 @Ultron.on_message(filters.private & filters.command("restart"))
 async def restart(_, msg: Message):
