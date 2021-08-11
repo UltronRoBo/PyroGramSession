@@ -21,27 +21,22 @@
         "TOKEN": {
             "description": "Your Bot Token, as a String. Get it from @BotFather on Telegram",
             "value": ""
-            "required": true
         },
         "API_ID": {
             "description": "Your Telegram Account's API ID. Get it from https://my.telegram.org/",
             "value": ""
-            "required": true
         },
         "API_HASH": {
             "description": "Your Telegram Account's API HASH. Get it from https://my.telegram.org/",
             "value": ""
-            "required": true
         },
         "APP_NAME": {
             "description": "Your Heroku App Name, that you just entered at the Top of the page",
             "value": ""
-            "required": true
         },
         "HEROKU_API": {
             "description": "Your Heroku Account's API KEY. Get it from https://dashboard.heroku.com/account/",
             "value": ""
-            "required": true
         }
     },
     "addons": [
