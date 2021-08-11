@@ -188,9 +188,6 @@ async def string(_, msg: Message):
             break
     try:
         session = Ultron("Ultron_PyroSession", api_id=api_id, api_hash=api_hash)
-    except Exception as e:
-        await Ultron.send_message(chat.id, f"**𝙀𝙍𝙍𝙊𝙍 :** `{str(e)}`\n𝑷𝒓𝒆𝒔𝒔 /start 𝒕𝒐 𝒔𝒕𝒂𝒓𝒕 𝒕𝒉𝒆 𝒑𝒓𝒐𝒄𝒆𝒔𝒔 𝒂𝒈𝒂𝒊𝒏.")
-        return
     try:
         await session.connect()
     except ConnectionError:
