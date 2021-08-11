@@ -2,7 +2,6 @@
     "name": "PʏʀᴏGʀᴀᴍ Sᴇssɪᴏɴ",
     "description": "A sᴜᴘᴇʀʙ ʙᴏᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ PʏʀᴏGʀᴀᴍ Sᴇssɪᴏɴ ғᴏʀ ʏᴏᴜʀ Tᴇʟᴇɢʀᴀᴍ Aᴄᴄᴏᴜɴᴛ ɪɴ ᴀɴ ᴇᴀsʏ ᴡᴀʏ. 𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 𝑼𝒍𝒕𝒓𝒐𝒏𝑹𝒐𝑩𝒐",
     "keywords": [
-        "string"
         "pyrogram"
         "telegram"
         "ultron"
@@ -10,9 +9,9 @@
         "python"
         "session"
     ],
-    "repository": "https://github.com/UltronRoBo/PyroGramSession/",
-    "website": "https://github.com/UltronRoBo/PyroGramSession/",
     "success_url": "https://github.com/UltronRoBo/PyroGramSession/",
+    "website": "https://github.com/UltronRoBo/PyroGramSession/",
+    "repository": "https://github.com/UltronRoBo/PyroGramSession/",
     "env": {
         "WEBHOOK": {
             "description": "Setting this to ANYTHING, will enable webhooks, when in env mode",
