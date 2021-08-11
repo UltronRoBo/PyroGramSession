@@ -261,9 +261,9 @@ async def string(_, msg: Message):
                 ]
             )
             await Ultron.send_message(chat.id, text, reply_markup=reply_markup)
-            except Exception as e:
-                await Ultron.send_message(chat.id, f"****𝙀𝙍𝙍𝙊𝙍 :** `{str(e)}`")
-                return
+        except Exception as e:
+            await Ultron.send_message(chat.id, f"****𝙀𝙍𝙍𝙊𝙍 :** `{str(e)}`")
+            return
     
 @Ultron.on_message(filters.private & filters.command("restart"))
 async def restart(_, msg: Message):
