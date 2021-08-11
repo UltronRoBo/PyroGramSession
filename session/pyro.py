@@ -58,7 +58,7 @@ TWO_STEP_VERIFICATION = """**__Nᴏᴛᴇᴅ!!__**\n\n𝒀𝒐𝒖❜𝒗𝒆 �
 
 @Ultron.on_message(filters.private & filters.command("start", "start@UltronPyro_Bot"))
 async def string(_, msg: Message):
-    if msg.chat.id in Credentials.BANNED_USERS:
+    if msg.chat.id in Credentials.BANNED:
         await Ultron.send_message(
             chat_id=msg.chat.id,
             text="𝑺𝒐𝒓𝒓𝒚, 𝑩𝒖𝒕 𝒂𝒄𝒄𝒐𝒓𝒅𝒊𝒏𝒈 𝒕𝒐 𝒎𝒆 𝒚𝒐𝒖❜𝒓𝒆 𝑩𝒂𝒏𝒏𝒆𝒅.\n𝑪𝒐𝒏𝒕𝒂𝒄𝒕 𝒎𝒚 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 𝙂𝙧𝙤𝙪𝙥 𝒇𝒐𝒓 𝒎𝒐𝒓𝒆 𝑰𝒏𝒇𝒐.",
