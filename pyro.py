@@ -142,7 +142,10 @@ async def string(_, msg: Message):
     
     # Getting API_ID
     api = await Ultron.send_message(
-        chat.id, GREETING.format(msg.from_user.mention), disable_web_page_preview=True, reply_to_message_id=msg.message_id
+        chat.id,
+        text=GREETING.format(msg.from_user.mention),
+        disable_web_page_preview=True,
+        reply_to_message_id=msg.message_id
     )
     if await is_cancel(msg, api.text):
         return
