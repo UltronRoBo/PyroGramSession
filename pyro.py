@@ -307,7 +307,13 @@ async def help(_, msg: Message):
             ]
         ]
     )
-    await Ultron.send_message(chat.id, help_text, reply_markup=reply_markup, reply_to_message_id=msg.message_id,)
+    chat = msg.chat
+    await Ultron.send_message(
+        chat_id=chat.id,
+        text=help_text,
+        reply_markup=reply_markup,
+        reply_to_message_id=msg.message_id
+    )
     
 async def is_cancel(msg: Message, text: str):
     if text.startswith("/cancel"):
