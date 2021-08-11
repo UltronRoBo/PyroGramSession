@@ -282,37 +282,36 @@ async def help(_, msg: Message):
 𝑰𝒇 𝒚𝒐𝒖 𝒉𝒂𝒗𝒆𝒏❜𝒕 𝒓𝒆𝒄𝒆𝒊𝒗𝒆𝒅 𝒂𝒏𝒚 `𝙊𝙏𝙋`, 𝒕𝒉𝒆𝒏 𝒕𝒓𝒚 /restart 𝒂𝒏𝒅 𝑮𝒐-𝑨𝒉𝒆𝒂𝒅 𝒔𝒕𝒂𝒓𝒕𝒊𝒏𝒈 𝒕𝒉𝒆 𝒑𝒓𝒐𝒄𝒆𝒔𝒔 𝒂𝒈𝒂𝒊𝒏 𝒘𝒊𝒕𝒉 /start 𝒄𝒐𝒎𝒎𝒂𝒏𝒅
 **Nᴏᴛᴇ :~ 𝒀𝒐𝒖 𝒎𝒖𝒔𝒕 𝒏𝒆𝒆𝒅 𝒕𝒐 𝑱𝒐𝒊𝒏 𝒕𝒉𝒆 𝑺𝒖𝒑𝒑𝒐𝒓𝒕 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 𝒇𝒐𝒓 𝒕𝒉𝒊𝒔 𝑩𝒐𝒕 𝒊𝒏 𝒐𝒓𝒅𝒆𝒓 𝒕𝒐 𝒖𝒔𝒆 𝒊𝒕.**
 """
-    reply_markup = InlineKeyboardMarkup
-    (
-        [
-            [
-                InlineKeyboardButton
-                (
-                    "⚜️ Sᴜᴘᴘᴏʀᴛ Cʜᴀɴɴᴇʟ ⚜️", url=f"https://t.me/{support}"
-                ),
-                InlineKeyboardButton
-                (
-                    "🔱 Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ 🔱", url=f"https://t.me/{group}"
-                )
-            ],
-            [
-                InlineKeyboardButton
-                (
-                    "🔰 Oᴡɴᴇʀ 🔰", url=f"https://t.me/{owner}"
-                ),
-                InlineKeyboardButton
-                (
-                    "💠 DEV 💠", url=f"https://t.me/{dev}"
-                )
-            ]
-        ]
-    )
     chat = msg.chat
     await Ultron.send_message(
         chat_id=chat.id,
         text=help_text,
-        reply_markup=reply_markup,
-        reply_to_message_id=msg.message_id
+        reply_to_message_id=msg.message_id,
+        reply_markup=InlineKeyboardMarkup
+        (
+            [
+                [
+                    InlineKeyboardButton
+                    (
+                        "⚜️ Sᴜᴘᴘᴏʀᴛ Cʜᴀɴɴᴇʟ ⚜️", url=f"https://t.me/{support}"
+                    ),
+                    InlineKeyboardButton
+                    (
+                        "🔱 Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ 🔱", url=f"https://t.me/{group}"
+                    )
+                ],
+                [
+                    InlineKeyboardButton
+                    (
+                        "🔰 Oᴡɴᴇʀ 🔰", url=f"https://t.me/{owner}"
+                    ),
+                    InlineKeyboardButton
+                    (
+                        "💠 DEV 💠", url=f"https://t.me/{dev}"
+                    )
+                ]
+            ]
+        )
     )
     
 async def is_cancel(msg: Message, text: str):
