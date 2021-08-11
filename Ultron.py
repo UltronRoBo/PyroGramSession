@@ -23,13 +23,13 @@ class Var:
 
 def main():
     plugins = dict(root="session")
-    Ultron = Ultron("PyroSession",
+    app = Ultron("PyroSession",
                  bot_token=Var.TOKEN,
                  api_id=Var.API_ID,
                  api_hash=Var.API_HASH,
                  plugins=plugins,
                  workers=100)
-    Ultron.run()
+    app.run()
     
 if __name__ == "__main__":
     main()
