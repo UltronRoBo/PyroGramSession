@@ -33,6 +33,7 @@ from pyrogram.errors.exceptions.bad_request_400 import
     UsernameNotOccupied
 )
 
+from Ultron import Ultron
 from Ultron import HEROKU_APP
 
 
