@@ -118,15 +118,31 @@ async def string(_, msg: Message):
                 parse_mode="markdown"
             )
             return
+        except Exception:
+            await Ultron.send_message(
+                chat_id=msg.chat.id,
+                text="**𝙎𝙊𝙈𝙀𝙏𝙃𝙄𝙉𝙂 𝙒3𝙉𝙏 𝙒𝙍𝙊𝙉𝙂 !!\n𝑪𝒐𝒏𝒕𝒂𝒄𝒕 𝒎𝒚 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 𝙂𝙧𝙤𝙪𝙥 𝒇𝒐𝒓 𝒎𝒐𝒓𝒆 𝑰𝒏𝒇𝒐.**",
+                reply_to_message_id=msg.message_id,
+                reply_markup=InlineKeyboardMarkup
+                (
+                    [
+                        [
+                            InlineKeyboardButton
+                            (
+                                "🔱 Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ 🔱", url=f"https://t.me/{group}"
+                            )
+                        ]
+                    ]
+                ),
+                parse_mode="markdown"
+            )
+            return
     
     chat = msg.chat
     
     # Getting API_ID
-    api = await Ultron.send_message(
-        chat.id,
-        text=GREETING.format(msg.from_user.mention),
-        disable_web_page_preview=True,
-        reply_to_message_id=msg.message_id
+    api = await Ultron.ask(
+        chat.id, GREETING.format(msg.from_user.mention), disable_web_page_preview=True,
     )
     if await is_cancel(msg, api.text):
         return
