@@ -19,13 +19,13 @@ HEROKU_APP = from_key(HEROKU_API).apps()[APP_NAME]
 
 def main():
     plugins = dict(root="session")
-    app = Ultron("PyroSession",
+    Ultron = Ultron("PyroSession",
                  bot_token=TOKEN,
                  api_id=API_ID,
                  api_hash=API_HASH,
                  plugins=plugins,
                  workers=100)
-    app.run()
+    Ultron.run()
     
 if __name__ == "__main__":
     main()
