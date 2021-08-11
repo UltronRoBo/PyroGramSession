@@ -89,7 +89,8 @@ async def string(_, msg: Message):
             (
                 [
                     [
-                        InlineKeyboardButton(
+                        InlineKeyboardButton
+                        (
                             "🔱 Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ 🔱", url=f"https://t.me/{group}"
                         )
                     ]
@@ -111,7 +112,8 @@ async def string(_, msg: Message):
                     (
                         [
                             [
-                                InlineKeyboardButton(
+                                InlineKeyboardButton
+                                (
                                     "🔱 Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ 🔱", url=f"https://t.me/{group}"
                                 )
                             ]
@@ -129,7 +131,8 @@ async def string(_, msg: Message):
                 (
                     [
                         [
-                            InlineKeyboardButton(
+                            InlineKeyboardButton
+                            (
                                 "⚜️ Jᴏɪɴ Sᴜᴘᴘᴏʀᴛ Cʜᴀɴɴᴇʟ ⚜️", url=f"https://t.me/{support}"
                             )
                         ]
@@ -147,7 +150,8 @@ async def string(_, msg: Message):
                 (
                     [
                         [
-                            InlineKeyboardButton(
+                            InlineKeyboardButton
+                            (
                                 "🔱 Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ 🔱", url=f"https://t.me/{group}"
                             )
                         ]
@@ -273,7 +277,8 @@ async def string(_, msg: Message):
         (
             [
                 [
-                    InlineKeyboardButton(
+                    InlineKeyboardButton
+                    (
                         "😼 Gᴇᴛ Sᴛʀɪɴɢ Sᴇssɪᴏɴ 😼", url=f"tg://openmessage?user_id={chat.id}"
                     )
                 ]
@@ -305,18 +310,22 @@ async def help(_, msg: Message):
     (
         [
             [
-                InlineKeyboardButton(
+                InlineKeyboardButton
+                (
                     "⚜️ Sᴜᴘᴘᴏʀᴛ Cʜᴀɴɴᴇʟ ⚜️", url=f"https://t.me/{support}"
                 ),
-                InlineKeyboardButton(
+                InlineKeyboardButton
+                (
                     "🔱 Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ 🔱", url=f"https://t.me/{group}"
                 )
             ],
             [
-                InlineKeyboardButton(
+                InlineKeyboardButton
+                (
                     "🔰 Oᴡɴᴇʀ 🔰", url=f"https://t.me/{owner}"
                 ),
-                InlineKeyboardButton(
+                InlineKeyboardButton
+                (
                     "💠 DEV 💠", url=f"https://t.me/{dev}"
                 )
             ]
