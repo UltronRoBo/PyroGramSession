@@ -2,13 +2,13 @@
     "name": "PʏʀᴏGʀᴀᴍ Sᴇssɪᴏɴ",
     "description": "A sᴜᴘᴇʀʙ ʙᴏᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ PʏʀᴏGʀᴀᴍ Sᴇssɪᴏɴ ғᴏʀ ʏᴏᴜʀ Tᴇʟᴇɢʀᴀᴍ Aᴄᴄᴏᴜɴᴛ ɪɴ ᴀɴ ᴇᴀsʏ ᴡᴀʏ. 𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 𝑼𝒍𝒕𝒓𝒐𝒏𝑹𝒐𝑩𝒐",
     "logo": "https://telegra.ph/file/fb740e97c0ab3215a2059.png",
-    "keywords": [
-    "pyrogram"
-    "telegram"
-    "ultron"
-    "bot"
-    "python"
-    "session"
+      "keywords": [
+      "pyrogram"
+      "telegram"
+      "ultron"
+      "bot"
+      "python"
+      "session"
     ],
     "success_url": "https://github.com/UltronRoBo/PyroGramSession/",
     "website": "https://github.com/UltronRoBo/PyroGramSession/",
@@ -48,15 +48,19 @@
         }
     },
     "addons": [
+        {
+            "plan": "heroku-postgresql",
+            "options": {
+                "version": "12"
+            }
+        }
     ],
     "buildpacks": [
         {
             "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-        },
-        {
+        },{
             "url": "heroku/python"
-        }
-    ],
+        }],
     "formation": {
         "worker": {
             "quantity": 1,
