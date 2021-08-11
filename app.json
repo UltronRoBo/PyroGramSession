@@ -37,6 +37,16 @@
         "HEROKU_API": {
             "description": "Your Heroku Account's API KEY. Get it from https://dashboard.heroku.com/account/",
             "value": ""
+        },
+        "SUPPORT": {
+            "description": "Your Bot's Support Channel, that you want the users to join in order to use your Session Generator. Make sure that you don't put @ in it",
+            "value": "UltronSupport"
+            "required": true
+        },
+        "SUPPORT_GROUP": {
+            "description": "Your Bot's Support Group, where the users can join and bother you about bugs/errors in the Session Generator. Make sure that you don't put @ in it",
+            "value": "UltronSupportChat"
+            "required": true
         }
     },
     "addons": [
