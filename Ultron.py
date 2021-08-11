@@ -1,13 +1,8 @@
 import os
-import logging
-import logging.config
-
-logging.getLogger().setLevel(logging.ERROR)
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from pyromod import listen
 from heroku3 import from_key
-from pyrogram import Client as Ultron
+from pyrogram import Client
 from typing import Dict, Optional, List
 from pyrogram.errors import MessageNotModified
 
@@ -20,16 +15,9 @@ class Var:
     HEROKU_APP = from_key(HEROKU_API).apps()[APP_NAME]
     SUPPORT = os.environ.get("SUPPORT", "UltronSupport")
     SUPPORT_GROUP = os.environ.get("SUPPORT_GROUP", "UltronSupportChat")
+    BANNED = set(int(x) for x in os.environ.get("BANNED","1883752632 1698803654 1781874715 1712612576 1815892895 1622398047 1669570166").split())
 
-def main():
-    plugins = dict(root="session")
-    app = Ultron("PyroSession",
-                 bot_token=Var.TOKEN,
-                 api_id=Var.API_ID,
-                 api_hash=Var.API_HASH,
-                 plugins=plugins,
-                 workers=100)
-    app.run()
-    
-if __name__ == "__main__":
-    main()
+Ultron = Client(":memory:",
+                api_id=Var.API_ID,
+                api_hash=Var.API_HASH,
+                bot_token=Var.TOKEN)
