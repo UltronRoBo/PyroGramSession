@@ -11,20 +11,22 @@ from pyrogram import Client as Ultron
 from typing import Dict, Optional, List
 from pyrogram.errors import MessageNotModified
 
-class Config:
+class Var:
     TOKEN = os.environ.get("TOKEN", None)
-    APP_NAME = os.environ.get("NAME", None)
-    HEROKU_API = os.environ.get("API", None)
     API_ID = int(os.environ.get("API_ID", 0))
     API_HASH = os.environ.get("API_HASH", None)
+    APP_NAME = os.environ.get("APP_NAME", None)
+    HEROKU_API = os.environ.get("HEROKU_API", None)
     HEROKU_APP = from_key(HEROKU_API).apps()[APP_NAME]
+    SUPPORT = os.environ.get("SUPPORT", "UltronSupport")
+    SUPPORT_GROUP = os.environ.get("SUPPORT_GROUP", "UltronSupportChat")
 
 def main():
     plugins = dict(root="session")
     Ultron = Ultron("PyroSession",
-                 bot_token=Config.TOKEN,
-                 api_id=Config.API_ID,
-                 api_hash=Config.API_HASH,
+                 bot_token=Var.TOKEN,
+                 api_id=Var.API_ID,
+                 api_hash=Var.API_HASH,
                  plugins=plugins,
                  workers=100)
     Ultron.run()
