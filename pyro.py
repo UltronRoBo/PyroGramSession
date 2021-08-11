@@ -188,7 +188,6 @@ async def string(_, msg: Message):
             break
     try:
         session = Ultron("Ultron_PyroSession", api_id=api_id, api_hash=api_hash)
-    try:
         await session.connect()
     except ConnectionError:
         await session.disconnect()
