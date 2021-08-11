@@ -240,7 +240,9 @@ async def string(_, msg: Message):
         new_code = two_step_code.text
         try:
             await session.check_password(new_code)
-            return
+    except Exception as e:
+        await Ultron.send_message(chat.id, f"**𝙀𝙍𝙍𝙊𝙍 :** `{str(e)}`")
+        return
     try:
         pyro_session =  await session.export_session_string()
         await session.send_message("me", f"""**👇 𝑯𝒆𝒓𝒆 𝒊𝒔 𝒚𝒐𝒖𝒓 𝑷𝒚𝒓𝒐𝑮𝒓𝒂𝒎 𝑺𝒕𝒓𝒊𝒏𝒈 𝑺𝒆𝒔𝒔𝒊𝒐𝒏 👇**\n𝑮𝒆𝒏𝒆𝒓𝒂𝒕𝒆𝒅 𝒖𝒔𝒊𝒏𝒈 [{bot}](https://t.me/{bot_name})\n\n```{pyro_session}```\n\n**👆 𝑻𝒂𝒑 𝒕𝒐 𝑪𝒐𝒑𝒚 👆**\n#PyroGram #Session #Ultron""", disable_web_page_preview=True)
