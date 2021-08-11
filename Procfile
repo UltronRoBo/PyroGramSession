@@ -1,1 +1,1 @@
-PYRO_SESSION: python3.9 pyro.py
+worker: python3.9 pyro.py
