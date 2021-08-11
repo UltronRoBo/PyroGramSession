@@ -33,12 +33,11 @@ from pyrogram.errors.exceptions.bad_request_400 import
     UsernameNotOccupied
 )
 
+from Ultron import Var
 from Ultron import Ultron
-from Ultron import HEROKU_APP
 
-
-SUPPORT = os.environ.get("SUPPORT", "UltronSupport")
-SUPPORT_GROUP = os.environ.get("SUPPORT_GROUP", "UltronSupportChat")
+SUPPORT = Var.SUPPORT
+SUPPORT_GROUP = Var.SUPPORT_GROUP
 
 support = SUPPORT
 group = SUPPORT_GROUP
@@ -46,7 +45,6 @@ bot = "@UltronPyro_Bot"
 bot_name = "UltronPyro_Bot"
 owner = "Warning_MadBoy_is_Back"
 dev = "ItS_PRaNAv_Xd"
-
 
 GREETING = f"""
 👋🏻 **𝑯𝒆𝒚𝒂!! {}**,
@@ -166,7 +164,7 @@ async def string(_, msg: Message):
     
     # Getting API_ID
     api = await Ultron.ask(
-        chat.id, GREETING.format(msg.from_user.mention)
+        chat.id, GREETING.format(msg.from_user.mention), disable_web_page_preview=True
     )
     if await is_cancel(msg, api.text):
         return
@@ -181,7 +179,7 @@ async def string(_, msg: Message):
     
     # Getting API_HASH 
     hash = await Ultron.ask(
-        chat.id, HASH
+        chat.id, HASH, disable_web_page_preview=True
     )
     if await is_cancel(msg, hash.text):
         return
@@ -271,7 +269,7 @@ async def string(_, msg: Message):
         return
     try:
         pyro_session =  await session.export_session_string()
-        await session.send_message("me", PYRO_STRING)
+        await session.send_message("me", PYRO_STRING, disable_web_page_preview=True)
         await session.disconnect()
         text = "𝒀𝒐𝒖𝒓 𝑷𝒚𝒓𝒐𝑮𝒓𝒂𝒎 𝑺𝒆𝒔𝒔𝒊𝒐𝒏 𝒘𝒂𝒔 𝒈𝒆𝒏𝒆𝒓𝒂𝒕𝒆𝒅 𝑺𝒖𝒄𝒄𝒆𝒔𝒔𝒇𝒖𝒍𝒍𝒚.✅\n𝑻𝒂𝒑 𝑩𝒆𝒍𝒐𝒘 𝒕𝒐 𝒈𝒆𝒕 𝒊𝒕.👇"
         reply_markup = InlineKeyboardMarkup
@@ -294,7 +292,7 @@ async def string(_, msg: Message):
 async def restart(_, msg: Message):
     if msg.from_user.id == 1732236209:
         await msg.reply("𝑹𝒆𝒔𝒕𝒂𝒓𝒕𝒆𝒅 𝒕𝒉𝒆 𝑩𝒐𝒕 𝑺𝒖𝒄𝒄𝒆𝒔𝒔𝒇𝒖𝒍𝒍𝒚❗❗")
-        HEROKU_APP.restart()
+        return Var.HEROKU_APP.restart()
     
 @Ultron.on_message(filters.private & filters.command("help", "help@UltronPyro_Bot"))
 async def help(_, msg: Message):
