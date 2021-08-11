@@ -187,17 +187,17 @@ async def string(_, msg: Message):
         if "y" in confirm.text:
             break
     try:
-        client = Ultron("Ultron_PyroSession", api_id=api_id, api_hash=api_hash)
+        session = Ultron("Ultron_PyroSession", api_id=api_id, api_hash=api_hash)
     except Exception as e:
         await Ultron.send_message(chat.id, f"**𝙀𝙍𝙍𝙊𝙍 :** `{str(e)}`\n𝑷𝒓𝒆𝒔𝒔 /start 𝒕𝒐 𝒔𝒕𝒂𝒓𝒕 𝒕𝒉𝒆 𝒑𝒓𝒐𝒄𝒆𝒔𝒔 𝒂𝒈𝒂𝒊𝒏.")
         return
     try:
-        await client.connect()
+        await session.connect()
     except ConnectionError:
-        await client.disconnect()
-        await client.connect()
+        await session.disconnect()
+        await session.connect()
     try:
-        code = await client.send_code(phone)
+        code = await session.send_code(phone)
         await asyncio.sleep(1)
     except FloodWait as e:
         await msg.reply(f"𝒀𝒐𝒖 𝒏𝒆𝒆𝒅 𝒕𝒐 𝒘𝒂𝒊𝒕, 𝒂𝒔 𝒚𝒐𝒖 𝒈𝒐𝒕 𝒂 𝑭𝒍𝒐𝒐𝒅𝑾𝒂𝒊𝒕 𝒐𝒇 {e.x} 𝑺𝒆𝒄𝒐𝒏𝒅𝒔 !!")
@@ -219,7 +219,7 @@ async def string(_, msg: Message):
         return
     otp_code = otp.text
     try:
-        await client.sign_in(phone, code.phone_code_hash, phone_code=' '.join(str(otp_code)))
+        await session.sign_in(phone, code.phone_code_hash, phone_code=' '.join(str(otp_code)))
     except PhoneCodeInvalid:
         await msg.reply("𝑰𝒏𝒗𝒂𝒍𝒊𝒅 𝑶𝑻𝑷 𝒑𝒓𝒐𝒗𝒊𝒅𝒆𝒅.\n𝑷𝒓𝒆𝒔𝒔 /start 𝒕𝒐 𝒔𝒕𝒂𝒓𝒕 𝒕𝒉𝒆 𝒑𝒓𝒐𝒄𝒆𝒔𝒔 𝒂𝒈𝒂𝒊𝒏.")
         return
@@ -238,7 +238,7 @@ async def string(_, msg: Message):
             return
         new_code = two_step_code.text
         try:
-            await client.check_password(new_code)
+            await session.check_password(new_code)
         except Exception as e:
             await msg.reply(f"**𝙀𝙍𝙍𝙊𝙍 :** `{str(e)}`")
             return
@@ -247,8 +247,8 @@ async def string(_, msg: Message):
         return
     try:
         pyro_session =  await session.export_session_string()
-        await client.send_message("me", f"""**👇 𝑯𝒆𝒓𝒆 𝒊𝒔 𝒚𝒐𝒖𝒓 𝑷𝒚𝒓𝒐𝑮𝒓𝒂𝒎 𝑺𝒕𝒓𝒊𝒏𝒈 𝑺𝒆𝒔𝒔𝒊𝒐𝒏 👇**\n𝑮𝒆𝒏𝒆𝒓𝒂𝒕𝒆𝒅 𝒖𝒔𝒊𝒏𝒈 [{bot}](https://t.me/{bot_name})\n\n```{pyro_session}```\n\n**👆 𝑻𝒂𝒑 𝒕𝒐 𝑪𝒐𝒑𝒚 👆**\n#PyroGram #Session #Ultron""", disable_web_page_preview=True)
-        await client.disconnect()
+        await session.send_message("me", f"""**👇 𝑯𝒆𝒓𝒆 𝒊𝒔 𝒚𝒐𝒖𝒓 𝑷𝒚𝒓𝒐𝑮𝒓𝒂𝒎 𝑺𝒕𝒓𝒊𝒏𝒈 𝑺𝒆𝒔𝒔𝒊𝒐𝒏 👇**\n𝑮𝒆𝒏𝒆𝒓𝒂𝒕𝒆𝒅 𝒖𝒔𝒊𝒏𝒈 [{bot}](https://t.me/{bot_name})\n\n```{pyro_session}```\n\n**👆 𝑻𝒂𝒑 𝒕𝒐 𝑪𝒐𝒑𝒚 👆**\n#PyroGram #Session #Ultron""", disable_web_page_preview=True)
+        await session.disconnect()
         text = "𝒀𝒐𝒖𝒓 𝑷𝒚𝒓𝒐𝑮𝒓𝒂𝒎 𝑺𝒆𝒔𝒔𝒊𝒐𝒏 𝒘𝒂𝒔 𝒈𝒆𝒏𝒆𝒓𝒂𝒕𝒆𝒅 𝑺𝒖𝒄𝒄𝒆𝒔𝒔𝒇𝒖𝒍𝒍𝒚.✅\n𝑻𝒂𝒑 𝑩𝒆𝒍𝒐𝒘 𝒕𝒐 𝒈𝒆𝒕 𝒊𝒕.👇"
         reply_markup = InlineKeyboardMarkup
         (
